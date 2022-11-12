@@ -7,8 +7,8 @@ public class TestaListagem {
 
 	public static void main(String[] args) throws SQLException {
 
-		CriaConexao criarConexao = new CriaConexao();
-		Connection connection = criarConexao.recuperaConexao();
+		ConnectionFactory connectionFactory = new ConnectionFactory();
+		Connection connection = connectionFactory.recuperaConexao();
 
 		Statement stm = connection.createStatement();
 		stm.execute("SELECT ID, NOME, DESCRICACAO FROM PRODUTO");

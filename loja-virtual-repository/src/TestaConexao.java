@@ -7,8 +7,8 @@ public class TestaConexao {
 
 		System.out.println("Abrindo conexao...");
 
-		CriaConexao criarConexao = new CriaConexao();
-		Connection connection = criarConexao.recuperaConexao();
+		ConnectionFactory connectionFactory = new ConnectionFactory();
+		Connection connection = connectionFactory.recuperaConexao();
 
 		System.out.println("Fechando conexao...");
 
