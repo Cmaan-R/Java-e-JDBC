@@ -1,5 +1,4 @@
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class TestaConexao {
@@ -8,8 +7,8 @@ public class TestaConexao {
 
 		System.out.println("Abrindo conexao...");
 
-		Connection connection = DriverManager.getConnection(
-				"jdbc:mysql://localhost/loja_virtual?useTimezone=true&serverTimezone=UTC", "root", "root");
+		CriaConexao criarConexao = new CriaConexao();
+		Connection connection = criarConexao.recuperaConexao();
 
 		System.out.println("Fechando conexao...");
 
