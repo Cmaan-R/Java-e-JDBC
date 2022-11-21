@@ -1,4 +1,5 @@
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -12,10 +13,13 @@ public class TestaInsercaoComParametro {
 		ConnectionFactory factory = new ConnectionFactory();
 		Connection connection = factory.recuperaConexao();
 
-		String sql = "INSERT INTO PRODUTO (nome, descricacao) VALUES ('" + nome + "', '" + descricao + "')";
-		System.out.println(sql);
-		Statement stm = connection.createStatement();
-		stm.execute(sql, Statement.RETURN_GENERATED_KEYS);
+		PreparedStatement stm = connection.prepareStatement("INSERT INTO PRODUTO (nome, descricacao) VALUES (? , ?)",
+				Statement.RETURN_GENERATED_KEYS);
+
+		stm.setString(1, nome);
+		stm.setString(2, descricao);
+
+		stm.execute();
 
 		ResultSet rst = stm.getGeneratedKeys();
 		while (rst.next()) {
