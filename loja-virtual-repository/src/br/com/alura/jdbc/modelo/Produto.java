@@ -20,4 +20,9 @@ public class Produto {
 		return nome;
 	}
 
+	public void setId(Integer id) {
+		this.id =  id;
+
+	}
+
 }
