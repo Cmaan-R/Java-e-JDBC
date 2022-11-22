@@ -15,8 +15,7 @@ public class ProdutoDAO {
 		this.connection = connection;
 	}
 
-	public void salvarProduto(Produto produto) throws SQLException {
-
+	public void salvar(Produto produto) throws SQLException {
 		String sql = "INSERT INTO PRODUTO (NOME, DESCRICACAO) VALUES (? , ?)";
 
 		try (PreparedStatement pstm = connection.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS)) {
