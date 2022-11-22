@@ -21,8 +21,13 @@ public class Produto {
 	}
 
 	public void setId(Integer id) {
-		this.id =  id;
+		this.id = id;
 
+	}
+
+	@Override
+	public String toString() {
+		return String.format("O produto criado foi : %d, %s, %s", this.id, this.nome, this.descricao);
 	}
 
 }
