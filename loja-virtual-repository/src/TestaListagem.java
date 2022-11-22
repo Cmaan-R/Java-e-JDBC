@@ -12,9 +12,9 @@ public class TestaListagem {
 
 		PreparedStatement stm = connection.prepareStatement("SELECT ID, NOME, DESCRICACAO FROM PRODUTO");
 		stm.execute();
-		
+
 		ResultSet rst = stm.getResultSet();
-		
+
 		while (rst.next()) {
 			Integer id = rst.getInt("ID");
 			System.out.println(id);
