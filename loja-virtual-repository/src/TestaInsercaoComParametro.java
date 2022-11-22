@@ -15,6 +15,11 @@ public class TestaInsercaoComParametro {
 		PreparedStatement stm = connection.prepareStatement("INSERT INTO PRODUTO (nome, descricacao) VALUES (? , ?)",
 				Statement.RETURN_GENERATED_KEYS);
 
+		connection.commit();
+
+		stm.close();
+		connection.close();
+
 		adicionarVariavel("SmartTV", "45 polegadas", stm);
 		adicionarVariavel("Radio", "Radio de bateria", stm);
 	}
