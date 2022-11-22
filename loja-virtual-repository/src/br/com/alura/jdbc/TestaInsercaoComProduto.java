@@ -15,9 +15,8 @@ public class TestaInsercaoComProduto {
 		try (Connection connection = new ConnectionFactory().recuperaConexao()) {
 			ProdutoDAO produtoDAO = new ProdutoDAO(connection);
 			produtoDAO.salvar(comoda);
-  			// Lista = persistenciaProduto.listar();
-			
-			
+			// Lista = persistenciaProduto.listar();
+
 		}
 		System.out.println(comoda);
 	}
