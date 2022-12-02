@@ -6,15 +6,12 @@ public class TestaConexao {
 
 	public static void main(String[] args) throws SQLException {
 
-		System.out.println("Abrindo conexao...");
-
 		ConnectionFactory connectionFactory = new ConnectionFactory();
-		Connection connection = connectionFactory.recuperaConexao();
+		Connection connection = connectionFactory.recuperarConexao();
 
-		System.out.println("Fechando conexao...");
+		System.out.println("Fechando conex�o!!");
 
 		connection.close();
-
 	}
 
 }
