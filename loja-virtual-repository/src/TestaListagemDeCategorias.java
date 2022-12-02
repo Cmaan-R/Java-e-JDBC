@@ -4,9 +4,7 @@ import java.util.List;
 
 import br.com.alura.jdbc.ConnectionFactory;
 import br.com.alura.jdbc.dao.CategoriaDAO;
-import br.com.alura.jdbc.dao.ProdutoDAO;
 import br.com.alura.jdbc.modelo.Categoria;
-import br.com.alura.jdbc.modelo.Produto;
 
 public class TestaListagemDeCategorias {
 
@@ -14,16 +12,16 @@ public class TestaListagemDeCategorias {
 
 		try (Connection connection = new ConnectionFactory().recuperaConexao()) {
 			CategoriaDAO categoriaDAO = new CategoriaDAO(connection);
-			List<Categoria> listaDeCategoria = categoriaDAO.listar();
+			List<Categoria> listaDeCategoria = categoriaDAO.listarComProdutos();
 			listaDeCategoria.stream().forEach(ct -> {
 				System.out.println(ct.getNome());
-				try {
-					for (Produto produto : new ProdutoDAO(connection).buscar(ct)) {
-						System.out.println(ct.getNome() + " - " + produto.getNome());
-					}
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
+//				try {
+//					for (Produto produto : new ProdutoDAO(connection).buscar(ct)) {
+//						System.out.println(ct.getNome() + " - " + produto.getNome());
+//					}
+//				} catch (SQLException e) {
+//					e.printStackTrace();
+//				}
 
 			});
 
