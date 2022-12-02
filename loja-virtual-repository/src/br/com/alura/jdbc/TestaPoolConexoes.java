@@ -1,4 +1,5 @@
 package br.com.alura.jdbc;
+
 import java.sql.SQLException;
 
 public class TestaPoolConexoes {
@@ -11,7 +12,7 @@ public class TestaPoolConexoes {
 			connectionFactory.recuperarConexao();
 			System.out.println("Conexão de número: " + i);
 		}
-		
+
 	}
 
 }
