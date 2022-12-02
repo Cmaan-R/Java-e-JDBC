@@ -19,7 +19,7 @@ public class TestaListagemDeCategorias {
 				System.out.println(ct.getNome());
 				try {
 					for (Produto produto : new ProdutoDAO(connection).buscar(ct)) {
-						System.out.println(ct.getNome() + "" + produto.getNome());
+						System.out.println(ct.getNome() + " - " + produto.getNome());
 					}
 				} catch (SQLException e) {
 					e.printStackTrace();
